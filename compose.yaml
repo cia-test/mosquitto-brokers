@@ -1,0 +1,13 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    volumes:
+      - type: bind
+        source: ./pw/conf/
+        target: /mosquitto/config/
+
+    ports:
+      - target: 3100
+        published: 3100
+        protocol: tcp
+
